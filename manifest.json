@@ -1,0 +1,90 @@
+{
+  "name": "TCG Player Quick Price Updater",
+  "short_name": "TCGP Pricer",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "A fast way to update prices in the TCG Player seller portal",
+  "permissions": [
+    "identity",
+    "tabs",
+    "https://docs.google.com/spreadsheets/"
+  ],
+  "oauth2": {
+    "client_id": "646930069931-g9ovvmtnlgr1gsrtvuh20795q3l8pp71.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/spreadsheets",          
+      "https://www.googleapis.com/auth/drive",
+      "https://www.googleapis.com/auth/drive.readonly",
+      "https://www.googleapis.com/auth/drive.file",
+      "https://www.googleapis.com/auth/spreadsheets.readonly"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://store.tcgplayer.com/admin/product/*",
+        "https://store.tcgplayer.com/admin/orders/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "TCG Player Pricer"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K"
+      },
+      "description": "Opens the extension pop up"
+    },
+    "update_prices": {
+      "suggest_key": {
+        "default": "Ctrl+Shift+Z",
+        "mac": "Command+Shift+Z"
+      },
+      "description": "Updates all prices"
+    },
+    "save_prices": {
+      "suggest_key": {
+        "default": "Ctrl+Shift+X",
+        "mac": "Command+Shift+X"
+      },
+      "description": "Saves all prices"
+    },
+    "submit_session": {
+      "suggest_key": {
+        "default": "Ctrl+Shift+L",
+        "mac": "Command+Shift+L"
+      },
+      "description": "Saves current session"
+    },
+    "store_address": {
+      "suggest_key": {
+        "default": "Ctrl+Shift+1",
+        "mac": "Command+Shift+1"
+      },
+      "description": "Stores current address"
+    },
+    "write_addresses": {
+      "suggest_key": {
+        "default": "Ctrl+Shift+2",
+        "mac": "Command+Shift+2"
+      },
+      "description": "Writes all stored addresses"
+    },
+    "bulk_write_addresses": {
+      "suggest_key": {
+        "default": "Ctrl+Shift+3",
+        "mac": "Command+Shift+3"
+      },
+      "description": "Opens checked orders in new tabs and writes their addresses"
+    }
+  }
+}

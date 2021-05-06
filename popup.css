@@ -1,0 +1,51 @@
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  width: 200px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(47,47,57);
+  color: white;
+}
+
+#grade-button {
+  border-radius: 5px;
+  width: 140px;
+  height: 40px;
+  font-size: 1.4em;
+  font-weight: bold;
+}
+
+/* #user-search {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 70%;
+  height: 35%;
+}
+
+textarea {
+  resize: none;
+  width: 130px;
+  height: 1.2em;
+  border-radius: 3px;
+}
+
+#progress-button {
+  padding: 5px;
+  box-shadow: 3px 3px 3px -3px black;
+  display: flex;
+  text-align: center;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+a {
+  color: lightcoral;
+  text-decoration: none;
+} */
